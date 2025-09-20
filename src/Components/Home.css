@@ -1,0 +1,31 @@
+.home {
+  text-align: center;
+  padding: 50px;
+  background-color: #f4f6f9;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.home h2 {
+  color: #1e3a8a; /* নীল রঙ */
+  margin-bottom: 30px;
+}
+
+.home-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.home-links a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  background-color: #1e3a8a;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.home-links a:hover {
+  background-color: #2563eb; /* hover এ হালকা নীল */
+}

@@ -1,0 +1,27 @@
+.map-container {
+  background-color: #f4f6f9 !important;
+  border: 2px solid #1e3a8a !important;
+  border-radius: 8px !important;
+  padding: 20px !important;
+  max-width: 900px !important;
+  margin: 20px auto !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2) !important;
+}
+
+.map-button {
+  display: block !important;
+  margin: 20px auto !important;
+  padding: 10px 25px !important;
+  background-color: #1e3a8a !important;
+  color: white !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease, transform 0.2s ease !important;
+}
+
+.map-button:hover {
+  background-color: #2563eb !important;
+  transform: translateY(-2px) !important;
+}

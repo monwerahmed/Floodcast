@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Home from "./Components/Home";
+import Register from "./Components/Register";
+import Login from "./Components/Login";
+import Map from "./Components/Map";
+import { useAuth } from "./contexts/AuthContext";
+import SharedLocations from "./SharedLocation/SharedLocations";
+
 
 function App() {
+  const { token } = useAuth();
+  const isLoggedIn = !!token;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />   {/* ✅ সবসময় login page দেখাবে */}
+        <Route path="/map" element={isLoggedIn ? <Map /> : <Navigate to="/login" />} />
+        
+        <Route path="/shared" element={isLoggedIn ? <SharedLocations /> : <Navigate to="/login" />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
   );
 }
 
